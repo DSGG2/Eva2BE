@@ -1,0 +1,6 @@
+<h2>¿Eliminar Estudiante?</h2>
+<p>¿Está seguro que desea eliminar a {{ estudiante.nombre }} {{ estudiante.apellido }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmar</button>
+</form>
