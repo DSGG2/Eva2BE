@@ -1,9 +1,8 @@
 <h2>Lista de Inscripciones</h2>
 <a href="{% url 'inscripcion_create' %}">Nueva Inscripción</a>
-<ul>
+<ul>    
     {% for inscripcion in inscripciones %}
-        <li>
-            {{ inscripcion.estudiante.nombre }} {{ inscripcion.estudiante.apellido }} - {{ inscripcion.curso.nombre }}
+        <li>{{ inscripcion.estudiante}}/{{ inscripcion.curso}}/{{ inscripcion.estado}}
             <a href="{% url 'inscripcion_update' inscripcion.id %}">Editar</a> 
             <a href="{% url 'inscripcion_delete' inscripcion.id %}">Eliminar</a>
         </li>
@@ -11,3 +10,4 @@
         <li>No hay inscripciones disponibles.</li>
     {% endfor %}
 </ul>
+<a href="{% url 'home' %}">Volver</a>

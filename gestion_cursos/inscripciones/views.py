@@ -97,9 +97,3 @@ def estudiante_delete(request, id):
         estudiante.delete()
         return redirect('estudiante_list')
     return render(request, 'inscripciones/estudiante_confirm_delete.html', {'estudiante': estudiante})
-
-def inscripcion_list(request):
-    return render(request, 'inscripciones/inscripcion_list.html')
-
-def curso_list(request):
-    return render(request, 'inscripciones/curso_list.html')

@@ -3,7 +3,7 @@
 <ul>
     {% for curso in cursos %}
         <li>
-            {{ curso.nombre }} - {{ curso.descripcion }}
+            {{ curso.nombre }}/{{ curso.tipo }}
             <a href="{% url 'curso_update' curso.id %}">Editar</a> 
             <a href="{% url 'curso_delete' curso.id %}">Eliminar</a>
         </li>
@@ -11,3 +11,4 @@
         <li>No hay cursos disponibles.</li>
     {% endfor %}
 </ul>
+<a href="{% url 'home' %}">Volver</a>

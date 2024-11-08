@@ -20,9 +20,15 @@ class Curso(models.Model):
     descripcion = models.TextField()
     vacantes = models.PositiveIntegerField(validators=[MinValueValidator(0)])
     precio = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0.0)])
+     
+    def __str__(self):
+        return self.nombre
 
 class Inscripcion(models.Model):
     estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     fecha = models.DateField(auto_now_add=True)
     estado = models.CharField(max_length=20, choices=[('Inscrito', 'Inscrito'), ('Cancelado', 'Cancelado'), ('Espera', 'En espera')])
+    
+    def __str__(self):
+        return self.estado
